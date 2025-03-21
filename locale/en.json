@@ -1,0 +1,119 @@
+{
+  "app": {
+    "title": "Birds of Eden",
+    "search": {
+      "placeholder": "Enter an address, city, or ZIP code",
+      "button": "Search",
+      "results": "{count} Properties in {location}",
+      "noResults": "No properties found",
+      "tryAdjusting": "Try adjusting your search criteria"
+    },
+    "navigation": {
+      "map": "Map",
+      "list": "List",
+      "filters": "Filters"
+    },
+    "auth": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    },
+    "property": {
+      "beds": "bd",
+      "baths": "ba",
+      "sqft": "sqft",
+      "house": "house",
+      "condo": "condo",
+      "apartment": "apartment",
+      "townhouse": "townhouse",
+      "aboutThisHome": "About this home",
+      "contactAgent": "Contact agent",
+      "scheduleATour": "Schedule Tour",
+      "backToResults": "Back to search results"
+    },
+    "map": {
+      "customView": "Custom Map View",
+      "zoom": "Zoom",
+      "googleMaps": "Google Maps",
+      "enableGoogleMaps": "Enable Google Maps API",
+      "simplifiedView": "This is a simplified map view. To use the actual Google Maps API:",
+      "learnMore": "Learn more",
+      "close": "Close"
+    },
+    "language": {
+      "select": "Select language",
+      "en": "English",
+      "ar": "العربية"
+    },
+    "mobile": {
+      "zillow": "Birds of Eden",
+      "forRent": "For Rent",
+      "forSale": "For Sale",
+      "daily": "Daily",
+      "showList": "Show List",
+      "nav": {
+        "profile": "Profile",
+        "search": "Search",
+        "add": "Add",
+        "chat": "Chat",
+        "service": "Service"
+      }
+    },
+    "listings": {
+        "title": "Listings",
+        "addNew" : "Add New",
+        "filters": {
+        "latest": "Latest",
+        "price": "Price",
+        "nearest": "Nearest"
+      },
+      "nav": {
+        "add": "Add",
+        "settings": "Settings"
+      }
+    
+      
+    
+    },
+    "service":{
+      "cs" : "Customer Service",
+      "subscription" : "Subscriptions",
+      "selling" : "Selling and Leasing",
+      "DS" : "Developer Services",
+      "PS" : "Professional Services",
+      "services" : "Services",
+      "today" : "Today Ads",
+      "Ls" : "Lease Contracts",
+      "SR" : "Search Requests",
+      "EMS" : "Exclusive marketing services",
+      "BOEDRS" : "Birds of Eden Real Estate",
+      "BREB" : "Birds of Eden Blog",
+      "LD" : "Legal Documents"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Create Account",
+    "forgotPassword": "Forgot your password?",
+    "resetPassword": "Reset Password",
+    "mobile": "Mobile",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "fullName": "Full Name",
+    "verificationCode": "Verification Code",
+    "loginButton": "Login",
+    "registerButton": "Create Account",
+    "resetButton": "Reset Password",
+    "sendCodeButton": "Send Reset Code",
+    "backToLogin": "Back to Login",
+    "alreadyHaveAccount": "Already have an account?",
+    "createNewAccount": "Or create a new account",
+    "enterMobile": "Enter the mobile number linked to your account",
+    "enterResetCode": "Enter the code sent to your mobile and create a new password",
+    "resetCodeSent": "We've sent a password reset code to your mobile number",
+    "tryAnotherMobile": "Try another mobile number",
+    "resetSuccess": "Your password has been reset successfully"
+  }
+  
+  
+}
+

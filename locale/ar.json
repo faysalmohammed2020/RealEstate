@@ -1,0 +1,114 @@
+{
+  "app": {
+    "title": "طيور عدن",
+    "search": {
+      "placeholder": "أدخل عنوانًا أو مدينة أو رمزًا بريديًا",
+      "button": "بحث",
+      "results": "{count} عقار في {location}",
+      "noResults": "لم يتم العثور على عقارات",
+      "tryAdjusting": "حاول تعديل معايير البحث الخاصة بك"
+    },
+    "navigation": {
+      "map": "خريطة",
+      "list": "قائمة",
+      "filters": "تصفية"
+    },
+    "auth": {
+      "signIn": "تسجيل الدخول",
+      "signUp": "إنشاء حساب"
+    },
+    "property": {
+      "beds": "غرفة",
+      "baths": "حمام",
+      "sqft": "قدم مربع",
+      "house": "منزل",
+      "condo": "شقة فاخرة",
+      "apartment": "شقة",
+      "townhouse": "منزل متصل",
+      "aboutThisHome": "عن هذا المنزل",
+      "contactAgent": "اتصل بالوكيل",
+      "scheduleATour": "جدولة جولة",
+      "backToResults": "العودة إلى نتائج ��لبحث"
+    },
+    "map": {
+      "customView": "عرض الخريطة المخصص",
+      "zoom": "تكبير",
+      "googleMaps": "خرائط جوجل",
+      "enableGoogleMaps": "تمكين واجهة برمجة تطبيقات خرائط جوجل",
+      "simplifiedView": "هذا عرض مبسط للخريطة. لاستخدام واجهة برمجة تطبيقات خرائط جوجل الفعلية:",
+      "learnMore": "تعلم المزيد",
+      "close": "إغلاق"
+    },
+    "language": {
+      "select": "اختر اللغة",
+      "en": "English",
+      "ar": "العربية"
+    },
+    "mobile": {
+      "zillow": "طيور عدن",
+      "forRent": "للإيجار",
+      "forSale": "للبيع",
+      "daily": "يومي",
+      "showList": "عرض القائمة",
+      "nav": {
+        "profile": "الملف الشخصي",
+        "search": "بحث",
+        "add": "إضافة",
+        "chat": "دردشة",
+        "service": "الخدمة"
+      }
+    },
+    "listings": {
+      "title": "القوائم",
+      "addNew": "Add New",
+      "filters": {
+        "latest": "الأحدث",
+        "price": "السعر",
+        "nearest": "الأقرب"
+      },
+      "nav": {
+        "add": "إضافة",
+        "settings": "الإعدادات"
+      }
+      
+    },
+    "service": {
+        "cs": "خدمة العملاء",
+        "subscription": "الاشتراكات",
+        "selling": "البيع والتأجير",
+        "DS": "خدمات المطورين",
+        "PS": "الخدمات المهنية",
+        "services": "الخدمات",
+        "today": "إعلانات اليوم",
+        "Ls": "عقود الإيجار",
+        "SR": "طلبات البحث",
+        "EMS": "خدمات التسويق الحصرية",
+        "BOEDRS": "عقارات بيردز أوف إيدن",
+        "BREB": "مدونة بيردز أوف إيدن",
+        "LD": "الوثائق القانونية"
+      }
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "mobile": "رقم الجوال",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "fullName": "الاسم الكامل",
+    "verificationCode": "رمز التحقق",
+    "loginButton": "تسجيل الدخول",
+    "registerButton": "إنشاء حساب",
+    "resetButton": "إعادة تعيين كلمة المرور",
+    "sendCodeButton": "إرسال رمز إعادة التعيين",
+    "backToLogin": "العودة إلى تسجيل الدخول",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "createNewAccount": "أو إنشاء حساب جديد",
+    "enterMobile": "أدخل رقم الجوال المرتبط بحسابك",
+    "enterResetCode": "أدخل الرمز المرسل إلى جوالك وأنشئ كلمة مرور جديدة",
+    "resetCodeSent": "تم إرسال رمز إعادة تعيين كلمة المرور إلى رقم جوالك",
+    "tryAnotherMobile": "جرب رقم جوال آخر",
+    "resetSuccess": "تم إعادة تعيين كلمة المرور بنجاح"
+  }
+}
