@@ -348,7 +348,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                 </div>
                 <div className="ml-auto">
                   <Image
-                    src="/images/qr-code.png"
+                    src="/QRCode.png"
                     alt="QR Code"
                     width={60}
                     height={60}
@@ -361,7 +361,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
             <div className="px-4 pb-4">
               <h3 className="font-bold mb-2">Location</h3>
               <div className="h-48 bg-gray-200 rounded-lg overflow-hidden relative">
-                <Image src="/images/map.png" alt="Map" fill className="object-cover" />
+                <Image src="/map.png" alt="Map" fill className="object-cover" />
               </div>
             </div>
           </TabsContent>
