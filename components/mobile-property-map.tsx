@@ -13,7 +13,7 @@ import { Layers, Navigation, Plus, Minus, List } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 
 export default function MobilePropertyMap() {
-  const t = useTranslations("app.map")
+  const t = useTranslations("app")
   const propertyT = useTranslations("app.property")
   const locale = useLocale()
   const isRtl = locale === "ar"
@@ -302,7 +302,7 @@ export default function MobilePropertyMap() {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <Button variant="secondary" className="bg-white shadow-md rounded-full px-4 py-2 flex items-center gap-2">
           <List className="h-4 w-4" />
-         <Link href="/listings">Show List</Link>
+         <Link href="/listings">{t("mobile.showList")}</Link>
         </Button>
       </div>
 

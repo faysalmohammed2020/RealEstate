@@ -50,6 +50,9 @@
       "forSale": "For Sale",
       "daily": "Daily",
       "showList": "Show List",
+      "ForRent" : " For Rent",
+      "ForSale" : " For Sale",
+      "Daily" : "Daily",
       "nav": {
         "profile": "Profile",
         "search": "Search",

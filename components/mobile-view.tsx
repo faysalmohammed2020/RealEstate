@@ -55,7 +55,7 @@ export default function MobileView() {
         >
           <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" />
         </svg>
-        For Rent
+       {t("mobile.ForRent")}
       </button>
       <button
         className={cn(
@@ -79,7 +79,7 @@ export default function MobileView() {
           <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
           <line x1="7" y1="7" x2="7.01" y2="7" />
         </svg>
-        For Sale
+        {t("mobile.ForSale")}
       </button>
       <button
         className={cn(
@@ -105,7 +105,7 @@ export default function MobileView() {
           <line x1="8" y1="2" x2="8" y2="6" />
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
-        Daily
+        {t("mobile.Daily")}
       </button>
     </div>
 
