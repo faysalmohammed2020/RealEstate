@@ -28,11 +28,13 @@ import { FormError } from "@/components/FormError";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Link, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl"
 
 const LoginPage = () => {
   const [formError, setFormError] = useState("");
   const router = useRouter();
   const session = useSession();
+  const t = useTranslations();
 
   const form = useForm<yup.InferType<typeof signInSchema>>({
     resolver: yupResolver(signInSchema),
@@ -68,8 +70,8 @@ const LoginPage = () => {
       <Card className="w-full max-w-md p-6">
         <CardHeader className="items-center">
           <img src="/Boed Logo.png" width={100} height={100}/>
-          <CardTitle className="text-2xl">Log In</CardTitle>
-          <CardDescription>Enter your email and password</CardDescription>
+          <CardTitle className="text-2xl">{t("auth.login")}</CardTitle>
+          <CardDescription>{t("auth.enterEmail&Password")}</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -80,7 +82,7 @@ const LoginPage = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{t("auth.Email")}</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
@@ -97,7 +99,7 @@ const LoginPage = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>{t("auth.Password")}</FormLabel>
                       <FormControl>
                         <Input
                           type="password"
@@ -112,7 +114,7 @@ const LoginPage = () => {
               </FormFieldset>
               <FormError message={formError} />
               <Button type="submit" className="mt-4 w-full bg-green-600 hover:bg-green-500">
-                Log In
+              {t("auth.loginButton")}
               </Button>
             </form>
           </Form>
@@ -121,7 +123,7 @@ const LoginPage = () => {
               href="/auth/forgot-password"
               className="text-green-500 hover:underline"
             >
-              Forgot password?
+               {t("auth.forgotPassword")}
             </Link>
           </div>
         </CardContent>

@@ -114,7 +114,10 @@
     "enterResetCode": "Enter the code sent to your mobile and create a new password",
     "resetCodeSent": "We've sent a password reset code to your mobile number",
     "tryAnotherMobile": "Try another mobile number",
-    "resetSuccess": "Your password has been reset successfully"
+    "resetSuccess": "Your password has been reset successfully",
+    "enterEmail&Password" : "Enter your email and password",
+    "Email" : "Email",
+    "Password" : "Password"
   }
   
   
