@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import LanguageSelector from "../language-selector"
 
 interface MobilePropertyDetailProps {
   id: string
@@ -44,10 +45,11 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
           <Link href={`/${locale}`}>
             <Button size="sm" variant="outline" className="bg-white/80 h-8 px-2">
               <ChevronLeft className="h-4 w-4 mr-1" />
-              Back
+              {t('Back')}
             </Button>
           </Link>
           <div className="flex gap-2">
+            <LanguageSelector/>
             <Button size="icon" variant="outline" className="bg-white/80 h-8 w-8 rounded-full">
               <Share className="h-4 w-4" />
             </Button>
@@ -60,7 +62,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
         {/* Image Counter */}
         <div className="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-2 py-1 rounded-md flex items-center">
           <Camera className="h-3 w-3 mr-1" />
-          See all photos...
+          {t('seeAllPhotos')}
         </div>
       </div>
 
@@ -76,7 +78,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                 <h2 className="font-bold text-lg">م. عمر المصيريع</h2>
                 <div className="flex items-center">
                   <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                  <span className="text-sm">4.9 Reviews (10)</span>
+                  <span className="text-sm">{t('Reviews')} (10)</span>
                 </div>
               </div>
             </div>
@@ -85,7 +87,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
             <div className="grid grid-cols-3 gap-2 mb-4">
               <Button className="bg-green-500 hover:bg-green-600 flex items-center justify-center">
                 <Phone className="h-4 w-4 mr-1" />
-                Call
+                {t('Call')}
               </Button>
               <Button className="bg-green-400 hover:bg-green-500 flex items-center justify-center">
                 <svg
@@ -102,11 +104,11 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                Whatsapp
+                {t('Whatsapp')}
               </Button>
               <Button className="bg-blue-500 hover:bg-blue-600 flex items-center justify-center">
                 <MessageSquare className="h-4 w-4 mr-1" />
-                Chat
+                {t('Chat')}
               </Button>
             </div>
 
@@ -114,11 +116,11 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
             <div className="bg-gray-100 p-3 rounded-md mb-4 flex items-start">
               <AlertTriangle className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-gray-600">
-                Advertisement: Dealing with or without payments makes you responsible to the description and information
+               {t('Ads')}
               </p>
             </div>
 
-            <h3 className="font-bold text-lg mb-2">District Information for Al Gharra</h3>
+            <h3 className="font-bold text-lg mb-2">{t('Dist')}</h3>
 
             <div className="flex items-center mb-4">
               <div className="mr-2">
@@ -137,12 +139,12 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-medium">Average meter price</p>
-                <p className="text-sm text-gray-600">1710 SAR Semiannually</p>
+                <p className="text-sm font-medium">{t('Avg')}</p>
+                <p className="text-sm text-gray-600">{t('SemiAnnually')}</p>
               </div>
             </div>
 
-            <p className="text-xs text-gray-500 mb-4">Based on the data of the ads published on Aqar platform</p>
+            <p className="text-xs text-gray-500 mb-4">{t('Platform')}</p>
           </div>
 
           {/* Tabs Navigation */}
@@ -152,21 +154,21 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
               className={cn("rounded-md text-sm", activeTab === "details" ? "bg-white shadow-sm" : "")}
               onClick={() => setActiveTab("details")}
             >
-              Listing Details
+             {t('LD')}
             </TabsTrigger>
             <TabsTrigger
               value="additional"
               className={cn("rounded-md text-sm", activeTab === "additional" ? "bg-white shadow-sm" : "")}
               onClick={() => setActiveTab("additional")}
             >
-              Additional Information
+             {t('AddInfo')}
             </TabsTrigger>
             <TabsTrigger
               value="location"
               className={cn("rounded-md text-sm", activeTab === "location" ? "bg-white shadow-sm" : "")}
               onClick={() => setActiveTab("location")}
             >
-              Location
+             {t('Location')}
             </TabsTrigger>
           </TabsList>
 
@@ -174,23 +176,23 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
           <TabsContent value="details" className="p-4 mt-0">
             <div className="space-y-4">
               <div className="border-b pb-4">
-                <h2 className="text-xl font-bold mb-2">Land for sale</h2>
+                <h2 className="text-xl font-bold mb-2">{t('Sale')}</h2>
                 <p className="text-green-600 font-bold text-xl mb-4">1,100,000 SAR</p>
 
                 <div className="flex justify-between mb-4">
-                  <span className="text-gray-600">Would you like to own the property?</span>
+                  <span className="text-gray-600">{t('property')}</span>
                   <Button variant="outline" className="text-blue-500 border-blue-500 h-8">
-                    Financing options
+                    {t('financingOptions')}
                   </Button>
                 </div>
 
-                <h3 className="font-bold mb-2">Listing details</h3>
+                <h3 className="font-bold mb-2">{t('LD')}</h3>
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <FileText className="h-5 w-5 mr-2 text-gray-500" />
-                      <span>Area</span>
+                      <span>{t('Area')}</span>
                     </div>
                     <span className="font-medium">1013</span>
                   </div>
@@ -198,7 +200,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <Tag className="h-5 w-5 mr-2 text-gray-500" />
-                      <span>Price Per Meter</span>
+                      <span>{t('PPM')}</span>
                     </div>
                     <span className="font-medium">1085 Riyal</span>
                   </div>
@@ -206,17 +208,17 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <MapPin className="h-5 w-5 mr-2 text-gray-500" />
-                      <span>Street Direction</span>
+                      <span>{t('SD')}</span>
                     </div>
-                    <span className="font-medium">3 Streets</span>
+                    <span className="font-medium">3 {t('Streets')}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <Info className="h-5 w-5 mr-2 text-gray-500" />
-                      <span>Type</span>
+                      <span>{t('Type')}</span>
                     </div>
-                    <span className="font-medium">Residential</span>
+                    <span className="font-medium">{t("Residential")}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -235,15 +237,15 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                       >
                         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                       </svg>
-                      <span>Street Width</span>
+                      <span>{t('StreetWidth')}</span>
                     </div>
-                    <span className="font-medium">25 meter</span>
+                    <span className="font-medium">{t('25Meter')}</span>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold mb-2">Property Features</h3>
+                <h3 className="font-bold mb-2">{t('PropertyFeatures')}</h3>
                 {/* Features would go here */}
               </div>
             </div>
@@ -252,37 +254,37 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
           <TabsContent value="additional" className="p-4 mt-0">
             <div className="space-y-3">
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">Listing ID</span>
+                <span className="text-gray-600">{t('ListingID')}</span>
                 <span className="font-medium">6100932</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">Created At</span>
+                <span className="text-gray-600">{t('CreatedAt')}</span>
                 <span className="font-medium">2025/02/11</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">License Number</span>
+                <span className="text-gray-600">{t('LicenseNumber')}</span>
                 <span className="font-medium">7200438430</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">Last Updated</span>
-                <span className="font-medium">3 Days Ago</span>
+                <span className="text-gray-600">{t('LastUpdated')}</span>
+                <span className="font-medium">3 {t('DaysAgo')}</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">License Expiration Date</span>
+                <span className="text-gray-600">{t('LED')}</span>
                 <span className="font-medium">01/02/2026</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">Source</span>
+                <span className="text-gray-600">{t('Source')}</span>
                 <span className="font-medium text-right">الهيئة العامة للعقار</span>
               </div>
 
               <div className="flex items-center justify-between py-2 border-b">
-                <span className="text-gray-600">Deed Area</span>
+                <span className="text-gray-600">{t('DeedArea')}</span>
                 <span className="font-medium">1013.87 M2</span>
               </div>
 
@@ -306,7 +308,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
                     <line x1="10" y1="11" x2="10" y2="17"></line>
                     <line x1="14" y1="11" x2="14" y2="17"></line>
                   </svg>
-                  Report Add
+                 {t('ReportAdd')}
                 </Button>
               </div>
             </div>
@@ -314,12 +316,12 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
 
           <TabsContent value="location" className="mt-0">
             <div className="p-4">
-              <h3 className="font-bold mb-2">Extra</h3>
+              <h3 className="font-bold mb-2">{t('Extra')}</h3>
               <p className="text-gray-600 mb-4 text-right">
                 للبيع أرض سكنية على ثلاث شوارع حي جوهرة الأحمد داخل النطاق العمراني المدينة المنورة
               </p>
               <Button variant="link" className="text-blue-500 p-0 h-auto mb-4">
-                Read more
+               {t('RM')}
               </Button>
             </div>
 
@@ -359,7 +361,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
             </div>
 
             <div className="px-4 pb-4">
-              <h3 className="font-bold mb-2">Location</h3>
+              <h3 className="font-bold mb-2">{t('Location')}</h3>
               <div className="h-48 bg-gray-200 rounded-lg overflow-hidden relative">
                 <Image src="/map.png" alt="Map" fill className="object-cover" />
               </div>
@@ -368,7 +370,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
         </Tabs>
 
         <div className="p-4">
-          <h3 className="font-bold mb-3">Similar ads nearby</h3>
+          <h3 className="font-bold mb-3">{t('Similaradsnearby')}</h3>
           <div className="space-y-3">
             <SimilarListing
               title="Store for sale"
@@ -400,7 +402,7 @@ export default function MobilePropertyDetail({ id, locale }: MobilePropertyDetai
             />
           </div>
 
-          <Button className="w-full mt-4 bg-green-500 hover:bg-green-600">Follow</Button>
+          <Button className="w-full mt-4 bg-green-500 hover:bg-green-600">{t('Follow')}</Button>
         </div>
       </div>
 
