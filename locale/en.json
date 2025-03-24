@@ -15,7 +15,8 @@
     },
     "auth": {
       "signIn": "Sign In",
-      "signUp": "Sign Up"
+      "signUp": "Sign Up",
+      "Name" : "Enter your Name"
     },
     "property": {
       "beds": "bd",
@@ -65,7 +66,6 @@
       "Extra" : "Extra",
       "Similaradsnearby" : "Similar ads nearby",
       "RM" : " Read more",
-      "Location" : "Location",
       "Follow" : "Follow ",
       "DaysAgo" : "Days Ago",
       "Residential" : "Residential",
@@ -158,7 +158,10 @@
     "resetSuccess": "Your password has been reset successfully",
     "enterEmail&Password" : "Enter your email and password",
     "Email" : "Email",
-    "Password" : "Password"
+    "Password" : "Password",
+    "enterEmail": "Enter your Email",
+    "enterPassword": "Enter your password",
+    "signUpButton" : "Sign Up"
   }
   
   

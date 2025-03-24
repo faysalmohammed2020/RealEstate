@@ -86,7 +86,7 @@ const LoginPage = () => {
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="Enter email address"
+                          placeholder={t("auth.enterEmail")}
                           {...field}
                         />
                       </FormControl>
@@ -103,7 +103,7 @@ const LoginPage = () => {
                       <FormControl>
                         <Input
                           type="password"
-                          placeholder="Enter password"
+                          placeholder={t("auth.enterPassword")}
                           {...field}
                         />
                       </FormControl>
