@@ -9,14 +9,17 @@ import { Home, Search, User, Heart, MessageCircle, Globe, CirclePlus, MessageSqu
 import MobilePropertyMap from "@/components/mobile-property-map"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import LanguageSelector from "@/components/language-selector";
+import LanguageSelector from "@/components/language-selector"
 import { Link } from "@/i18n/navigation"
+import { signOut, useSession } from "@/lib/auth-client"
+import { Button } from "@/components/ui/button";
 
 export default function MobileView() {
   const t = useTranslations("app")
   const locale = useLocale()
   const isRtl = locale === "ar"
   const [activeTab, setActiveTab] = useState("forRent")
+  const session = useSession();
 
   return (
     <main className="h-screen flex flex-col bg-white">
@@ -27,9 +30,27 @@ export default function MobileView() {
             <Image src="/Boed Logo.png" alt="Logo" fill className="object-contain" />
           </div>
         </div>
-        <button className="p-1">
-        <LanguageSelector />
-        </button>
+        <div className="ml-auto flex items-center gap-4">
+            <LanguageSelector />
+            {session?.data ? (
+              <Button variant="outline" size="sm" onClick={() => signOut()}>
+                Log Out
+              </Button>
+            ) : (
+              <>
+                <Link href="/sign-in">
+                  <Button variant="outline" size="sm">
+                    {t("auth.signIn")}
+                  </Button>
+                </Link>
+                <Link href="/sign-up">
+                  <Button size="sm" className="bg-green-600 hover:bg-green-500">
+                    {t("auth.signUp")}
+                  </Button>
+                </Link>
+              </>
+            )}
+          </div>
       </div>
 
       {/* Filter Tabs */}

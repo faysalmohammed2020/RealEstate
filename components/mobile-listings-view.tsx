@@ -13,13 +13,15 @@ import { ChevronLeft } from "lucide-react"
 import { propertyListings } from "@/lib/property-data"
 import type { PropertyData } from "@/lib/property-data"
 import Link from "next/link"
-import LanguageSelector from "@/components/language-selector";
+import LanguageSelector from "@/components/language-selector"
+import { signOut, useSession } from "@/lib/auth-client"
 
 export default function MobileListingsView() {
   const t = useTranslations("app")
   const locale = useLocale()
   const isRtl = locale === "ar"
   const [activeTab, setActiveTab] = useState("latest")
+  const session = useSession();
 
   return (
     <main className="h-screen flex flex-col bg-white">
@@ -32,7 +34,27 @@ export default function MobileListingsView() {
         {/* <Button variant="ghost" size="icon" className="rounded-full">
           <Search className="h-5 w-5" />
         </Button> */}
-          <LanguageSelector />
+          <div className="ml-auto flex items-center gap-4">
+            <LanguageSelector />
+            {session?.data ? (
+              <Button variant="outline" size="sm" onClick={() => signOut()}>
+                Log Out
+              </Button>
+            ) : (
+              <>
+                <Link href="/sign-in">
+                  <Button variant="outline" size="sm">
+                    {t("auth.signIn")}
+                  </Button>
+                </Link>
+                <Link href="/sign-up">
+                  <Button size="sm" className="bg-green-600 hover:bg-green-500">
+                    {t("auth.signUp")}
+                  </Button>
+                </Link>
+              </>
+            )}
+          </div>
       </div>
 
       {/* Filter Tabs */}

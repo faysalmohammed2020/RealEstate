@@ -8,10 +8,13 @@ import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
 import LanguageSelector from "@/components/language-selector"
 import { Link } from "@/i18n/navigation"
+import { signOut, useSession } from "@/lib/auth-client"
+import { Button } from "@/components/ui/button";
 
 export default function ServicesPage() {
   const locale = useLocale()
   const isMobile = useIsMobile()
+  
  
 
   return (
@@ -23,6 +26,7 @@ export default function ServicesPage() {
 
 function MobileView({ locale }: { locale: string }) {
   const t = useTranslations("app")
+  const session = useSession()
   return (
     <div className="mx-auto h-screen max-w-md overflow-hidden bg-white">
       {/* Header */}
@@ -31,9 +35,27 @@ function MobileView({ locale }: { locale: string }) {
           <ChevronLeft className="mr-1 h-5 w-5" />
          <Link href="/"> <span className="text-sm font-medium">{t("listings.title")}</span></Link>
         </div>
-        <div>
-           <LanguageSelector />
-        </div>
+        <div className="ml-auto flex items-center gap-4">
+            <LanguageSelector />
+            {session?.data ? (
+              <Button variant="outline" size="sm" onClick={() => signOut()}>
+                Log Out
+              </Button>
+            ) : (
+              <>
+                <Link href="/sign-in">
+                  <Button variant="outline" size="sm">
+                    {t("auth.signIn")}
+                  </Button>
+                </Link>
+                <Link href="/sign-up">
+                  <Button size="sm" className="bg-green-600 hover:bg-green-500">
+                    {t("auth.signUp")}
+                  </Button>
+                </Link>
+              </>
+            )}
+          </div>
       </div>
 
       {/* Search bar */}
