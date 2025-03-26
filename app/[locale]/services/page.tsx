@@ -3,7 +3,7 @@
 import type React from "react"
 import Image from "next/image"
 import { useLocale, useTranslations } from "next-intl"
-import { ChevronLeft, Globe, ChevronRight,CirclePlus, Search,User, MessageSquare, Grip, Headset, HandHelping, Podcast, ShieldMinus, FolderCode } from "lucide-react"
+import { ChevronLeft, Globe, ChevronRight,CirclePlus, Search,User, MessageSquare, Grip, Headset, HandHelping, Podcast, ShieldMinus, FolderCode,UserIcon, MessageCircle, Briefcase } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
 import LanguageSelector from "@/components/language-selector"
@@ -35,6 +35,7 @@ function MobileView({ locale }: { locale: string }) {
           <ChevronLeft className="mr-1 h-5 w-5" />
          <Link href="/"> <span className="text-sm font-medium">{t("listings.title")}</span></Link>
         </div>
+        
         <div className="ml-auto flex items-center gap-4">
             <LanguageSelector />
             {session?.data ? (
@@ -133,6 +134,7 @@ function MobileView({ locale }: { locale: string }) {
 
 // Replace the entire DesktopView function with this more professional version
 function DesktopView({ locale }: { locale: string }) {
+  const session = useSession();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Professional header with shadow */}
@@ -140,14 +142,26 @@ function DesktopView({ locale }: { locale: string }) {
         <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
           <div className="flex items-center">
             <div className="relative h-8 w-8 mr-3">
-              <Image src="/Boed Logo.png" alt="Birds Of Eden" fill className="object-contain" />
+              <Image src="/Boed Logo.png" alt="Birds Of Eden" width={250} height={250}  className="object-contain" />
             </div>
-            <h1 className="text-xl font-semibold text-gray-800">Birds of Eden Real Estate Services</h1>
+            
           </div>
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-500 hover:text-gray-700 transition-colors">
-              <Globe className="h-5 w-5" />
-            </button>
+          <nav className="ml-auto flex items-center gap-6">
+            <Link href="/services" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <Briefcase className="h-5 w-5" /> Service
+            </Link>
+            <Link href="/chat" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <MessageCircle className="h-5 w-5" />Chat
+            </Link>
+            {session?.data ? (
+              <Link href="/profile" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+                <UserIcon className="h-5 w-5" /> Profile
+              </Link>
+            ) : null}
+          </nav>
+             <LanguageSelector/>
+           
             <button className="flex items-center space-x-2 bg-green-50 text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition-colors">
               <span className="font-medium">Contact Us</span>
             </button>

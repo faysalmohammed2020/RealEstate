@@ -55,7 +55,7 @@ export default function DesktopView() {
           >
             Choose Language :
           </Typography>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
             {languageOptions.map(({ code, label, flag }) => (
               <button
                 key={code}

@@ -23,6 +23,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import LanguageSelector from "@/components/language-selector"
 import { signOut, useSession } from "@/lib/auth-client";
+import { MapIcon, ListIcon, SlidersHorizontal, UserIcon, MessageCircle, Briefcase } from "lucide-react";
 
 interface DesktopPropertyDetailProps {
   id: string
@@ -43,6 +44,19 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
           <Link href={`/${locale}`}>
             <h1 className="text-2xl font-bold text-green-600">{t("title")}</h1>
           </Link>
+          <nav className="ml-auto flex items-center gap-6">
+            <Link href="/services" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <Briefcase className="h-5 w-5" /> Service
+            </Link>
+            <Link href="/chat" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <MessageCircle className="h-5 w-5" />Chat
+            </Link>
+            {session?.data ? (
+              <Link href="/profile" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+                <UserIcon className="h-5 w-5" /> Profile
+              </Link>
+            ) : null}
+          </nav>
           <div className="ml-auto flex items-center gap-4">
             <LanguageSelector />
              {session?.data ? (
