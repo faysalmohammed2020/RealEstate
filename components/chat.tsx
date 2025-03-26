@@ -1,63 +1,60 @@
-// components/Chat.tsx
-'use client'
 import { useState } from 'react';
-import { MessageCircle } from 'lucide-react'; // Import MessageCircle icon from lucide-react
+import { MessageCircle } from 'lucide-react';
 
-const Chat = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+interface ChatProps {
+  isChatOpen: boolean;
+  setIsChatOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Chat: React.FC<ChatProps> = ({ isChatOpen, setIsChatOpen }) => {
   const [messages, setMessages] = useState<string[]>([]);
   const [message, setMessage] = useState('');
 
-  const toggleChat = () => {
-    setIsChatOpen((prevState) => !prevState);
-  };
-
+  // Handle sending a message
   const handleSendMessage = () => {
     if (message.trim()) {
-      // Add the user's message to the messages array first
-      const userMessage = `You: ${message}`;
-      setMessages((prevMessages) => [...prevMessages, userMessage]);
+      // Add the user's message to the chat
+      setMessages((prevMessages) => [...prevMessages, `You: ${message}`]);
 
-      // Check for the message and respond
+      // Simulate a bot reply (just a simple response for now)
       let botReply = '';
       if (message.toLowerCase() === 'hi') {
         botReply = 'Chatbot: How are you?';
-      } else if (message.toLowerCase() === 'hello') {
-        botReply = 'Chatbot: Hello there!';
       } else {
-        botReply = 'Chatbot: Hello There!.';
+        botReply = 'Chatbot: I didn’t understand that.';
       }
 
-      // Add bot's reply after a delay (simulating real-time response)
+      // Simulate the bot's reply after a short delay
       setTimeout(() => {
         setMessages((prevMessages) => [...prevMessages, botReply]);
-      }, 500); // Adds a delay before the bot responds
+      }, 500);
 
-      setMessage(''); // Clear the input field
+      // Clear the input field after sending
+      setMessage('');
     }
   };
 
   return (
-    <div>
-      {/* Chat Button with Lucide MessageCircle Icon */}
-      <button
-        onClick={toggleChat}
-        className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center"
+    <>
+      {/* Floating Chat Icon */}
+      <div
+        onClick={() => setIsChatOpen(!isChatOpen)} // Toggle the chat window visibility
+        className="fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full cursor-pointer shadow-lg"
       >
         <MessageCircle className="h-6 w-6" /> Chat
-      </button>
+      </div>
 
-      {/* Chat Window */}
+      {/* Chat Box */}
       {isChatOpen && (
         <div className="fixed bottom-16 right-4 bg-white p-4 rounded-lg shadow-lg w-80">
-          <div className="h-64 overflow-y-auto">
+          <div className="h-64 overflow-y-auto mb-2">
             {messages.map((msg, index) => (
               <div key={index} className="mb-2 p-2 bg-gray-100 rounded">
                 {msg}
               </div>
             ))}
           </div>
-          <div className="flex mt-2">
+          <div className="flex">
             <input
               type="text"
               value={message}
@@ -74,7 +71,7 @@ const Chat = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
