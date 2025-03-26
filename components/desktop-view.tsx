@@ -65,7 +65,7 @@ export default function DesktopView() {
            {/* Navbar Chat Button */}
            <button
               onClick={toggleChat}
-              className="flex items-center gap-1 text-gray-700 hover:text-gray-900"
+              className="flex items-center gap-1 font-bold text-gray-700 hover:text-gray-900"
             >
               <MessageCircle className="h-5 w-5" />
               Chat
