@@ -11,11 +11,23 @@ import { useTranslations } from "next-intl";
 import { useSearch } from "@/lib/search-context";
 import { Link } from "@/i18n/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import Typography from "@mui/material/Typography";
+
+
+const languageOptions = [
+  { code: "en", label: "English", flag: "https://flagcdn.com/w40/us.png" },
+  { code: "ar", label: "বাংলা", flag: "https://flagcdn.com/w40/sa.png" },
+  
+];
 
 export default function DesktopView() {
+  const router = useRouter();
   const t = useTranslations("app");
   const session = useSession();
-
+  const changeLanguage = (lang: string) => {
+    router.push(`/${lang}`);
+  };
   return (
     <main className="min-h-screen bg-gray-50">
       <header className="sticky top-0 z-10 bg-white shadow-sm">
@@ -35,7 +47,32 @@ export default function DesktopView() {
             ) : null}
           </nav>
           <div className="ml-6 flex items-center gap-4">
-            <LanguageSelector />
+            {/* Language Selector (Horizontal for Desktop) */}
+        <div className="hidden md:flex  items-center">
+          <Typography
+            variant="subtitle2"
+            className="text-black font-semibold uppercase text-xs mb-1 p-4"
+          >
+            Choose Language :
+          </Typography>
+          <div className="flex items-center space-x-6">
+            {languageOptions.map(({ code, label, flag }) => (
+              <button
+                key={code}
+                onClick={() => changeLanguage(code)}
+                className="flex flex-col items-center hover:opacity-75 transition duration-200"
+              >
+                <img
+                  src={flag}
+                  alt={label}
+                  width={40}
+                  height={40}
+                  className="shadow-md"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
             {session?.data ? (
               <Button variant="outline" size="sm" onClick={() => signOut()}>Log Out</Button>
             ) : (
