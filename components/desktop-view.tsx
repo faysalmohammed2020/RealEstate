@@ -96,7 +96,7 @@ function SearchResults() {
               <PropertyMap />
             </div>
             <div className="h-[calc(100vh-220px)] overflow-y-auto pr-2">
-              <PropertyList />
+             <Link href="/listings"> <PropertyList /></Link>
             </div>
           </div>
         </TabsContent>

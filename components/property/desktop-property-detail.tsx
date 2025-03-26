@@ -70,7 +70,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
       <div className="container mx-auto px-4 py-6">
         <Link href={`/${locale}`} className="flex items-center text-sm mb-4 hover:underline">
           <ChevronLeft className="h-4 w-4 mr-1" />
-          Back to listings
+         {t('property.Back')}
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -92,7 +92,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
               {/* Image Counter */}
               <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm px-3 py-1.5 rounded-md flex items-center">
                 <Camera className="h-4 w-4 mr-2" />
-                See all photos...
+               {t('property.seeAllPhotos')}
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                       )}
                       onClick={() => setActiveTab("details")}
                     >
-                      Listing Main Details
+                     {t('property.LD')}
                     </TabsTrigger>
                     <TabsTrigger
                       value="additional"
@@ -120,7 +120,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                       )}
                       onClick={() => setActiveTab("additional")}
                     >
-                      Additional Information
+                      {t('property.AddInfo')}
                     </TabsTrigger>
                     <TabsTrigger
                       value="location"
@@ -130,7 +130,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                       )}
                       onClick={() => setActiveTab("location")}
                     >
-                      Location
+                      {t('property.Location')}
                     </TabsTrigger>
                   </TabsList>
                 </div>
@@ -139,23 +139,23 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                 <TabsContent value="details" className="p-6 mt-0">
                   <div className="space-y-6">
                     <div className="border-b pb-6">
-                      <h2 className="text-2xl font-bold mb-3">Land for sale</h2>
+                      <h2 className="text-2xl font-bold mb-3">{t('property.Sale')}</h2>
                       <p className="text-green-600 font-bold text-2xl mb-6">1,100,000 SAR</p>
 
                       <div className="flex justify-between mb-6">
-                        <span className="text-gray-600">Would you like to own the property?</span>
+                        <span className="text-gray-600">{t('property.property')}</span>
                         <Button variant="outline" className="text-blue-500 border-blue-500 h-8">
-                          Financing options
+                          {t('property.financingOptions')}
                         </Button>
                       </div>
 
-                      <h3 className="font-bold mb-3">Listing details</h3>
+                      <h3 className="font-bold mb-3">{t('property.LD')}</h3>
 
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <FileText className="h-5 w-5 mr-2 text-gray-500" />
-                            <span>Area</span>
+                            <span>{t('property.Area')}</span>
                           </div>
                           <span className="font-medium">1013</span>
                         </div>
@@ -163,7 +163,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <Tag className="h-5 w-5 mr-2 text-gray-500" />
-                            <span>Price Per Meter</span>
+                            <span>{t('property.PPM')}</span>
                           </div>
                           <span className="font-medium">1085 Riyal</span>
                         </div>
@@ -171,7 +171,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <MapPin className="h-5 w-5 mr-2 text-gray-500" />
-                            <span>Street Direction</span>
+                            <span>{t('property.SD')}</span>
                           </div>
                           <span className="font-medium">3 Streets</span>
                         </div>
@@ -179,9 +179,9 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <Info className="h-5 w-5 mr-2 text-gray-500" />
-                            <span>Type</span>
+                            <span>{t('property.Type')}</span>
                           </div>
-                          <span className="font-medium">Residential</span>
+                          <span className="font-medium">{t('property.Residential')}</span>
                         </div>
 
                         <div className="flex items-center justify-between">
@@ -200,15 +200,15 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                             >
                               <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                             </svg>
-                            <span>Street Width</span>
+                            <span>{t('property.StreetWidth')}</span>
                           </div>
-                          <span className="font-medium">25 meter</span>
+                          <span className="font-medium">{t('property.25Meter')}</span>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="font-bold mb-3">Property Features</h3>
+                      <h3 className="font-bold mb-3">{t('property.PropertyFeatures')}</h3>
                       {/* Features would go here */}
                     </div>
                   </div>
@@ -217,37 +217,37 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                 <TabsContent value="additional" className="p-6 mt-0">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">Listing ID</span>
+                      <span className="text-gray-600">{t('property.ListingID')}</span>
                       <span className="font-medium">6100932</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">Created At</span>
+                      <span className="text-gray-600">{t('property.CreatedAt')}</span>
                       <span className="font-medium">2025/02/11</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">License Number</span>
+                      <span className="text-gray-600">{t('property.LicenseNumber')}</span>
                       <span className="font-medium">7200438430</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">Last Updated</span>
+                      <span className="text-gray-600">{t('property.LastUpdated')}</span>
                       <span className="font-medium">3 Days Ago</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">License Expiration Date</span>
+                      <span className="text-gray-600">{t('property.LED')}</span>
                       <span className="font-medium">01/02/2026</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">Source</span>
+                      <span className="text-gray-600">{t('property.Source')}</span>
                       <span className="font-medium text-right">الهيئة العامة للعقار</span>
                     </div>
 
                     <div className="flex items-center justify-between py-3 border-b">
-                      <span className="text-gray-600">Deed Area</span>
+                      <span className="text-gray-600">{t('property.DeedArea')}</span>
                       <span className="font-medium">1013.87 M2</span>
                     </div>
 
@@ -271,7 +271,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                           <line x1="10" y1="11" x2="10" y2="17"></line>
                           <line x1="14" y1="11" x2="14" y2="17"></line>
                         </svg>
-                        Report Add
+                       {t('property.ReportAdd')}
                       </Button>
                     </div>
                   </div>
@@ -279,12 +279,12 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
 
                 <TabsContent value="location" className="mt-0">
                   <div className="p-6">
-                    <h3 className="font-bold mb-3">Extra</h3>
+                    <h3 className="font-bold mb-3">{t('property.Extra')}</h3>
                     <p className="text-gray-600 mb-4 text-right">
                       للبيع أرض سكنية على ثلاث شوارع حي جوهرة الأحمد داخل النطاق العمراني المدينة المنورة
                     </p>
                     <Button variant="link" className="text-blue-500 p-0 h-auto mb-6">
-                      Read more
+                      {t('property.RM')}
                     </Button>
 
                     <div className="bg-green-500 text-white p-6 rounded-lg flex items-center mb-6">
@@ -311,7 +311,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                       </div>
                       <div className="ml-auto">
                         <Image
-                          src="/images/qr-code.png"
+                          src="/QRCode.png"
                           alt="QR Code"
                           width={80}
                           height={80}
@@ -320,9 +320,9 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                       </div>
                     </div>
 
-                    <h3 className="font-bold mb-3">Location</h3>
+                    <h3 className="font-bold mb-3">{t('property.Location')}</h3>
                     <div className="h-80 bg-gray-200 rounded-lg overflow-hidden relative">
-                      <Image src="/images/map.png" alt="Map" fill className="object-cover" />
+                      <Image src="/map.png" alt="Map" fill className="object-cover" />
                     </div>
                   </div>
                 </TabsContent>
@@ -341,7 +341,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                   <h2 className="font-bold text-lg">م. عمر المصيريع</h2>
                   <div className="flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                    <span className="text-sm">4.9 Reviews (10)</span>
+                    <span className="text-sm">{t('property.Reviews')}(10)</span>
                   </div>
                 </div>
               </div>
@@ -350,7 +350,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
               <div className="space-y-3">
                 <Button className="w-full bg-green-500 hover:bg-green-600 flex items-center justify-center">
                   <Phone className="h-4 w-4 mr-2" />
-                  Call
+                {t('property.Call')}
                 </Button>
                 <Button className="w-full bg-green-400 hover:bg-green-500 flex items-center justify-center">
                   <svg
@@ -367,11 +367,11 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  Whatsapp
+                  {t('property.Whatsapp')}
                 </Button>
                 <Button className="w-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center">
                   <MessageSquare className="h-4 w-4 mr-2" />
-                  Chat
+                  {t('property.Chat')}
                 </Button>
               </div>
 
@@ -380,8 +380,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                 <div className="flex items-start">
                   <AlertTriangle className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-600">
-                    Advertisement: Dealing with or without payments makes you responsible to the description and
-                    information
+                    {t('property.Ads')}
                   </p>
                 </div>
               </div>
@@ -389,7 +388,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
 
             {/* District Information */}
             <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-              <h3 className="font-bold text-lg mb-4">District Information for Al Gharra</h3>
+              <h3 className="font-bold text-lg mb-4">{t('property.Dist')}</h3>
 
               <div className="flex items-center mb-4">
                 <div className="mr-3">
@@ -408,17 +407,17 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium">Average meter price</p>
-                  <p className="text-gray-600">1710 SAR Semiannually</p>
+                  <p className="font-medium">{t('property.Avg')}</p>
+                  <p className="text-gray-600">1710 SAR {t('property.SemiAnnually')}</p>
                 </div>
               </div>
 
-              <p className="text-sm text-gray-500">Based on the data of the ads published on Aqar platform</p>
+              <p className="text-sm text-gray-500">{t('property.Platform')}</p>
             </div>
 
             {/* Similar Listings */}
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="font-bold text-lg mb-4">Similar ads nearby</h3>
+              <h3 className="font-bold text-lg mb-4">{t('property.Similaradsnearby')}</h3>
               <div className="space-y-4">
                 <SimilarListing
                   title="Store for sale"
@@ -443,7 +442,7 @@ export default function DesktopPropertyDetail({ id, locale }: DesktopPropertyDet
                 />
               </div>
 
-              <Button className="w-full mt-6 bg-green-500 hover:bg-green-600">Follow</Button>
+              <Button className="w-full mt-6 bg-green-500 hover:bg-green-600">{t('property.Follow')}</Button>
             </div>
           </div>
         </div>
