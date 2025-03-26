@@ -13,11 +13,11 @@ import { Link } from "@/i18n/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Typography from "@mui/material/Typography";
-import Chat from '../components/Chat'; 
+import Chat from '../components/chat'; 
 
 const languageOptions = [
   { code: "en", label: "English", flag: "https://flagcdn.com/w40/us.png" },
-  { code: "ar", label: "বাংলা", flag: "https://flagcdn.com/w40/sa.png" },
+  { code: "ar", label: "العربية", flag: "https://flagcdn.com/w40/sa.png" },
   
 ];
 
