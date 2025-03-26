@@ -5,7 +5,7 @@ import PropertyList from "@/components/property-list";
 import SearchBar from "@/components/search-bar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MapIcon, ListIcon, SlidersHorizontal } from "lucide-react";
+import { MapIcon, ListIcon, SlidersHorizontal, UserIcon, MessageCircle, Briefcase } from "lucide-react";
 import LanguageSelector from "@/components/language-selector";
 import { useTranslations } from "next-intl";
 import { useSearch } from "@/lib/search-context";
@@ -20,25 +20,31 @@ export default function DesktopView() {
     <main className="min-h-screen bg-gray-50">
       <header className="sticky top-0 z-10 bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center">
-          {/* <h1 className="text-2xl font-bold text-green-500">{t("title")}</h1> */}
-          <img src="/Boed Logo.png" width={120} height={120}/>
-          <div className="ml-auto flex items-center gap-4">
+          <img src="/Boed Logo.png" width={120} height={120} />
+          <nav className="ml-auto flex items-center gap-6">
+            <Link href="/services" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <Briefcase className="h-5 w-5" /> Service
+            </Link>
+            <Link href="/chat" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+              <MessageCircle className="h-5 w-5" />Chat
+            </Link>
+            {session?.data ? (
+              <Link href="/profile" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
+                <UserIcon className="h-5 w-5" /> Profile
+              </Link>
+            ) : null}
+          </nav>
+          <div className="ml-6 flex items-center gap-4">
             <LanguageSelector />
             {session?.data ? (
-              <Button variant="outline" size="sm" onClick={() => signOut()}>
-                Log Out
-              </Button>
+              <Button variant="outline" size="sm" onClick={() => signOut()}>Log Out</Button>
             ) : (
               <>
                 <Link href="/sign-in">
-                  <Button variant="outline" size="sm">
-                    {t("auth.signIn")}
-                  </Button>
+                  <Button variant="outline" size="sm">{t("auth.signIn")}</Button>
                 </Link>
                 <Link href="/sign-up">
-                  <Button size="sm" className="bg-green-600 hover:bg-green-500">
-                    {t("auth.signUp")}
-                  </Button>
+                  <Button size="sm" className="bg-green-600 hover:bg-green-500">{t("auth.signUp")}</Button>
                 </Link>
               </>
             )}
@@ -96,7 +102,7 @@ function SearchResults() {
               <PropertyMap />
             </div>
             <div className="h-[calc(100vh-220px)] overflow-y-auto pr-2">
-             <Link href="/listings"> <PropertyList /></Link>
+              <Link href="/listings"><PropertyList /></Link>
             </div>
           </div>
         </TabsContent>
