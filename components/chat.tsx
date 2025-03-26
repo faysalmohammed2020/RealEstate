@@ -1,5 +1,5 @@
 // components/Chat.tsx
-
+'use client'
 import { useState } from 'react';
 import { MessageCircle } from 'lucide-react'; // Import MessageCircle icon from lucide-react
 
