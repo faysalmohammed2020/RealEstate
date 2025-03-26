@@ -14,7 +14,7 @@ import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Typography from "@mui/material/Typography";
 import Chat from '../components/chat'; 
-
+import { useState } from "react";
 const languageOptions = [
   { code: "en", label: "English", flag: "https://flagcdn.com/w40/us.png" },
   { code: "ar", label: "العربية", flag: "https://flagcdn.com/w40/sa.png" },
@@ -28,22 +28,47 @@ export default function DesktopView() {
   const changeLanguage = (lang: string) => {
     router.push(`/${lang}`);
   };
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => {
+    setIsChatOpen((prev) => !prev);
+  };
   return (
     <main className="min-h-screen bg-gray-50">
       <header className="sticky top-0 z-10 bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center">
           <img src="/Boed Logo.png" width={120} height={120} />
           <nav className="ml-auto flex items-center gap-6">
-            <Link href="/services" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
-              <Briefcase className="h-5 w-5" /> Service
-            </Link>
-            <Chat/>
-            {session?.data ? (
-              <Link href="/profile" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
-                <UserIcon className="h-5 w-5" /> Profile
-              </Link>
-            ) : null}
-          </nav>
+      {/* Service Link */}
+      <Link
+        href="/services"
+        className="flex items-center gap-1 font-bold text-gray-700 hover:text-gray-900"
+      >
+        <Briefcase className="h-5 w-5 font-bold" /> Service
+      </Link>
+
+      {/* Profile Link, only visible if the session exists */}
+      {session?.data ? (
+        <Link
+          href="/profile"
+          className="flex items-center gap-1 font-bold text-gray-700 hover:text-gray-900"
+        >
+          <UserIcon className="h-5 w-5 " /> Profile
+        </Link>
+      ) : null}
+
+      {/* Chat Button */}
+      <button
+        onClick={toggleChat}
+        className="flex items-center gap-1 font-bold text-gray-700 hover:text-gray-900"
+      >
+        <MessageCircle className="h-5 w-5" />
+        Chat
+      </button>
+
+      {/* Conditionally render the Chat component */}
+      {isChatOpen && <Chat />}
+    </nav>
           <div className="ml-6 flex items-center gap-4">
             {/* Language Selector (Horizontal for Desktop) */}
         <div className="hidden md:flex  items-center">

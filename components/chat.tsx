@@ -42,9 +42,9 @@ const Chat = () => {
       {/* Chat Button with Lucide MessageCircle Icon */}
       <button
         onClick={toggleChat}
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center"
+        className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-6 w-6" /> Chat
       </button>
 
       {/* Chat Window */}
