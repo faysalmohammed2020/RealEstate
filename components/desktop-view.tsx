@@ -6,14 +6,14 @@ import SearchBar from "@/components/search-bar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapIcon, ListIcon, SlidersHorizontal, UserIcon, MessageCircle, Briefcase } from "lucide-react";
-import LanguageSelector from "@/components/language-selector";
+
 import { useTranslations } from "next-intl";
 import { useSearch } from "@/lib/search-context";
 import { Link } from "@/i18n/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Typography from "@mui/material/Typography";
-
+import Chat from '../components/Chat'; 
 
 const languageOptions = [
   { code: "en", label: "English", flag: "https://flagcdn.com/w40/us.png" },
@@ -37,9 +37,7 @@ export default function DesktopView() {
             <Link href="/services" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
               <Briefcase className="h-5 w-5" /> Service
             </Link>
-            <Link href="/chat" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
-              <MessageCircle className="h-5 w-5" />Chat
-            </Link>
+            <Chat/>
             {session?.data ? (
               <Link href="/profile" className="flex items-center gap-1 text-gray-700 hover:text-gray-900">
                 <UserIcon className="h-5 w-5" /> Profile
